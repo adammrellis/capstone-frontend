@@ -3,7 +3,7 @@ import VehicleList from "../customerView/vehicles/VehicleList";
 import PartList from "../customerView/parts/PartList";
 import CartList from "../customerView/CartList"
 
-import { Row, Col, Container, Button } from "react-bootstrap";
+import { Row, Col, Container, Button, Card } from "react-bootstrap";
 
 const Dashboard = () => {
   return (
@@ -11,7 +11,7 @@ const Dashboard = () => {
       
       <Row >
         <Col
-        xs={9}
+        xs={8}
           style={{
             display: "flex",
             flexDirection: "column",
@@ -19,9 +19,21 @@ const Dashboard = () => {
             margin: "10px"
           }}
         >
-          <h3 style={{ color: "goldenrod", textAlign: "center" }}>
+          <Card
+            style={{
+              color: "lightgray",
+              width: "15rem",
+              margin: "10px",
+              backgroundColor: "#333",
+              border:"solid gray 1px",
+              boxShadow: "0 8px 16px 0 black",
+              opacity: ".8"
+            }}
+          >
+          <h3 style={{ color: "red", textAlign: "center" }}>
             List of Vehicles
           </h3>
+          </Card>
           <hr></hr>
           <VehicleList />
         </Col>
@@ -33,9 +45,21 @@ const Dashboard = () => {
             margin: "10px"
           }}
         >
-          <h3 style={{ color: "goldenrod" }}>
+          <Card
+            style={{
+              color: "lightgray",
+              width: "15rem",
+              margin: "10px",
+              backgroundColor: "#333",
+              border:"solid gray 1px",
+              boxShadow: "0 8px 16px 0 black",
+              opacity: ".8"
+            }}
+          >
+          <h3 style={{ color: "red", textAlign: "center" }}>
             Your Cart
           </h3>
+          </Card>
           <hr></hr>
           <CartList />
         </Col>

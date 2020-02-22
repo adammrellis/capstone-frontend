@@ -49,7 +49,12 @@ class PartList extends React.Component {
           }}
         >
           <Link to={`/newPartForm`}>
-              <Button>Add New Part</Button>
+              <Button
+                variant="outline-light"
+                style={{ margin: "10px", border:"1px white solid", backgroundColor:"#333", opacity: ".85"
+              }}>
+                  Add New Part
+              </Button>
           </Link>
           <div
             style={{
@@ -67,7 +72,7 @@ class PartList extends React.Component {
                     style={{
                       backgroundColor: "#333",
                       color: "lightgray",
-                      border: "1px goldenrod solid"
+                      border: "1px red solid"
                     }}
                     id="basic-addon1"
                   >
@@ -77,7 +82,7 @@ class PartList extends React.Component {
                 <FormControl
                   style={{
                     backgroundColor: "#333",
-                    border: "1px goldenrod solid"
+                    border: "1px red solid"
                   }}
                   placeholder="Make/Model/Part Type"
                   onChange={this.handleInput}

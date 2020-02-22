@@ -36,8 +36,8 @@ const Part = ({ parts, singlePart }) => {
           <div style={{ display: "flex" }}>
             <Link to={`/partEdit/${singlePart.id}`}>
               <Button 
-              variant="outline-warning"
-              style={{ margin: "3px", width:"185px", height:"60px", border:"1px goldenrod solid"  }}
+              variant="outline-danger"
+              style={{ margin: "3px", width:"185px", height:"60px", border:"1px white solid"  }}
               >
                 Edit Part Details
               </Button>

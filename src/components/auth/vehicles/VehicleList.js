@@ -48,7 +48,11 @@ class VehicleList extends React.Component {
             </div>
           </div>
           <Link to={`/newVehicleForm`}>
-              <Button>Add New Vehicle</Button>
+              <Button
+                variant="outline-light"
+                style={{ margin: "10px", border:"1px white solid", backgroundColor:"#333", opacity: ".85"
+              }}>
+              Add New Vehicle</Button>
           </Link>
           <div
             style={{

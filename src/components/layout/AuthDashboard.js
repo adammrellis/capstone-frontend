@@ -2,7 +2,7 @@ import React from "react";
 import VehicleList from "../auth/vehicles/VehicleList";
 import PartList from "../auth/parts/PartList";
 
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col, Container, Card } from "react-bootstrap";
 
 const Dashboard = () => {
   return (
@@ -17,9 +17,21 @@ const Dashboard = () => {
             margin: "10px"
           }}
         >
-          <h3 style={{ color: "goldenrod", textAlign: "center" }}>
+          <Card
+            style={{
+              color: "lightgray",
+              width: "15rem",
+              margin: "10px",
+              backgroundColor: "#333",
+              border:"solid gray 1px",
+              boxShadow: "0 8px 16px 0 black",
+              opacity: ".8"
+            }}
+          >
+          <h3 style={{ color: "red", textAlign: "center" }}>
             List of Vehicles
           </h3>
+          </Card>
           <hr></hr>
           <VehicleList />
         </Col>
@@ -31,7 +43,21 @@ const Dashboard = () => {
             margin: "10px"
           }}
         >
-          <h3 style={{ color: "goldenrod" }}>Full List of Parts</h3>
+          <Card
+            style={{
+              color: "lightgray",
+              width: "15rem",
+              margin: "10px",
+              backgroundColor: "#333",
+              border:"solid gray 1px",
+              boxShadow: "0 8px 16px 0 black",
+              opacity: ".8"
+            }}
+          >
+          <h3 style={{ color: "red", textAlign: "center" }}>
+            Full List of Parts
+          </h3>
+          </Card>
           <hr></hr>
           <PartList />
         </Col>

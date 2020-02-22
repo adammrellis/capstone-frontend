@@ -38,7 +38,12 @@ const Vehicle = ({ vehicles, singleVehicle }) => {
           <Card.Text></Card.Text>
           <NavLink to={`/vehicleParts/${singleVehicle.id}`}>
           <div style={{ textAlign: "center" }}>
-            <Button variant="outline-warning">View Parts Inventory</Button>
+            <Button 
+              variant="outline-danger"
+              style={{ margin: "3px", width:"185px", height:"60px", border:"1px white solid"  }}
+              >
+                View Parts Inventory
+            </Button>
           </div>
         </NavLink>
         </Card.Body>

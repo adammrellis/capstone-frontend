@@ -32,7 +32,7 @@ class PartEdit extends React.Component {
     const handleRemove = event => {
       this.props.removePartfunc(this.state.id);
       console.log("delete", this.state.id);
-      // this.props.history.push("/authdashboard");
+      this.props.history.push("/authdashboard");
 
     };
     console.log("STATE in PART form", this.state);
@@ -50,10 +50,10 @@ class PartEdit extends React.Component {
         <div style={{ width: "50%" }}>
           <Form onSubmit={this.handleSubmit}>
             <FormGroup style={{ margin: "15px" }}>
-              <h3 style={{ color: "gold" }}>Enter Part Information</h3>
+              <h3 style={{ color: "red" }}>Enter Part Information</h3>
               <hr></hr>
               <Form.Group controlId="part_nameId">
-                <Form.Label style={{ color: "gold" }}>Part Name</Form.Label>
+                <Form.Label style={{ color: "red" }}>Part Name</Form.Label>
                 <Form.Control
                   type="text"
                   name="part_name"
@@ -65,7 +65,7 @@ class PartEdit extends React.Component {
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
               <Form.Group controlId="part_typeId">
-                <Form.Label style={{ color: "gold" }}>Part Type</Form.Label>
+                <Form.Label style={{ color: "red" }}>Part Type</Form.Label>
                 <Form.Control
                   type="text"
                   name="part_type"
@@ -76,7 +76,7 @@ class PartEdit extends React.Component {
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
               <Form.Group controlId="imageId">
-                <Form.Label style={{ color: "gold" }}>Part Image</Form.Label>
+                <Form.Label style={{ color: "red" }}>Part Image</Form.Label>
                 <Form.Control
                   type="text"
                   name="image"
@@ -86,15 +86,16 @@ class PartEdit extends React.Component {
                 />
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
-              <div>
+              <div style={{ textAlign: "center" }}>
               <Button
+                style={{ margin: "3px", width:"90px", height:"60px", border:"1px white solid"  }}
                 disabled={this.state.part_type ? false : true}
                 type="submit"
               >
                 Submit
               </Button>
               <Button
-              style={{ margin: "3px", width:"90px", height:"60px", border:"1px goldenrod solid"  }}
+              style={{ margin: "3px", width:"90px", height:"60px", border:"1px white solid"  }}
               className="btn-sm"
               variant="danger"
               onClick={handleRemove}

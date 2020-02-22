@@ -4,6 +4,8 @@ import { updatePart } from "./actions.js";
 const initialState = [];
 
 export default (state = initialState, action) => {
+
+
   switch (action.type) {
     case types.FETCH_ALL_PARTS_PENDING:
       return state;

@@ -1,10 +1,17 @@
 import React from 'react'
+import { connect } from "react-redux";
+import { updatePart } from "../../store/store/parts/actions"
 import { Button, Card } from "react-bootstrap";
+import { NavLink, withRouter } from "react-router-dom";
 import PropTypes from 'prop-types'
 
-const CartItem = ({cartItem, removeFromCart}) => {
-  const handleRemove = e => {
-    removeFromCart(cartItem.id)
+const CartItem = ({cartItem, updatePart}) => {
+
+  console.log("CARTITEM: ", cartItem)
+
+  const handleRemove = item => {
+    const updatedPart = { ...item, in_cart: false }
+    updatePart(updatedPart)
   }
 
   return (
@@ -12,7 +19,6 @@ const CartItem = ({cartItem, removeFromCart}) => {
         <Card 
         style={{
             color: "lightgray",
-            width: "10rem",
             margin: "10px",
             backgroundColor: "#333",
             border:"solid gray 1px",
@@ -24,7 +30,7 @@ const CartItem = ({cartItem, removeFromCart}) => {
                 <Card.Text>${cartItem.price}.00</Card.Text>
                 <Button 
                     className="btn btn-danger sm-text btn-sm"
-                    onClick={handleRemove}
+                    onClick={() => handleRemove(cartItem)}
                 >Remove From Cart</Button>
             </Card.Body>
         </Card>
@@ -40,4 +46,13 @@ const CartItem = ({cartItem, removeFromCart}) => {
 //   removeFromCart: PropTypes.func.isRequired
 // }
 
-export default CartItem
+function mapStateToProps(state, props) {
+  return {
+    parts: state.parts,
+    // locations: state.locations
+  };
+}
+
+export default connect(mapStateToProps, {updatePart})(
+  withRouter(CartItem)
+);

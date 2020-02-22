@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, FormGroup } from "react-bootstrap";
+import { Button, Form, FormGroup, Card } from "react-bootstrap";
 import { updateVehicle } from "../../../store/store/vehicles/actions";
 import { removeVehicle } from "../../../store/store/vehicles/actions";
 import { connect } from "react-redux";
@@ -31,7 +31,7 @@ class VehicleEdit extends React.Component {
   handleRemove = event => {
     this.props.removeVehiclefunc(this.state.id);
     console.log("delete", this.state.id);
-    // this.props.history.push("/authdashboard");
+    this.props.history.push("/authdashboard");
 
   };
 
@@ -49,13 +49,24 @@ class VehicleEdit extends React.Component {
           height: "100vh"
         }}
       >
-        <div style={{ width: "50%" }}>
+        <div style={{ width: "50%", alignItems: "center"}}>
           <Form onSubmit={this.handleSubmit}>
             <FormGroup style={{ margin: "15px" }}>
-              <h3 style={{ color: "gold" }}>Enter Vehicle Information</h3>
+              <Card
+                style={{
+                  color: "lightgray",
+                  width: "25rem",
+                  margin: "10px",
+                  backgroundColor: "#333",
+                  border:"solid gray 1px",
+                  boxShadow: "0 8px 16px 0 black",
+                  opacity: ".8",
+                }}>
+                <h3 style={{ color: "red", textAlign: "center" }}>Enter Vehicle Information</h3>
+              </Card>
               <hr></hr>
               <Form.Group controlId="year_rangeId">
-                <Form.Label style={{ color: "gold" }}>Year Range</Form.Label>
+                <Form.Label style={{ color: "red" }}>Year Range</Form.Label>
                 <Form.Control
                   type="text"
                   name="year_range"
@@ -66,7 +77,7 @@ class VehicleEdit extends React.Component {
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
               <Form.Group controlId="makeId">
-                <Form.Label style={{ color: "gold" }}>Make</Form.Label>
+                <Form.Label style={{ color: "red" }}>Make</Form.Label>
                 <Form.Control
                   type="text"
                   name="make"
@@ -77,7 +88,7 @@ class VehicleEdit extends React.Component {
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
               <Form.Group controlId="modelId">
-                <Form.Label style={{ color: "gold" }}>Model</Form.Label>
+                <Form.Label style={{ color: "red" }}>Model</Form.Label>
                 <Form.Control
                   type="text"
                   name="model"
@@ -88,7 +99,7 @@ class VehicleEdit extends React.Component {
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
               <Form.Group controlId="imageId">
-                <Form.Label style={{ color: "gold" }}>Vehicle Image</Form.Label>
+                <Form.Label style={{ color: "red" }}>Vehicle Image</Form.Label>
                 <Form.Control
                   type="text"
                   name="image"
@@ -98,15 +109,16 @@ class VehicleEdit extends React.Component {
                 />
                 <Form.Text className="text-muted"></Form.Text>
               </Form.Group>
-              <div>
+              <div style={{ textAlign: "center" }}>
               <Button
+                style={{ margin: "3px", width:"90px", height:"60px", border:"1px white solid"  }}
                 disabled={this.state.make ? false : true}
                 type="submit"
               >
                 Submit
               </Button>
               <Button
-              style={{ margin: "3px", width:"90px", height:"60px", border:"1px goldenrod solid"  }}
+              style={{ margin: "3px", width:"90px", height:"60px", border:"1px white solid"  }}
               className="btn-sm"
               variant="danger"
               onClick={this.handleRemove}

@@ -34,8 +34,8 @@ const Vehicle = ({ vehicles, singleVehicle }) => {
           <Card.Text></Card.Text>
           <Link to={`/vehicleEdit/${singleVehicle.id}`}>
               <Button 
-              variant="outline-warning"
-              style={{ margin: "3px", width:"185px", height:"60px", border:"1px goldenrod solid"  }}
+              variant="outline-danger"
+              style={{ margin: "3px", width:"185px", height:"60px", border:"1px white solid"  }}
               >
                 Edit Vehicle Details
               </Button>
