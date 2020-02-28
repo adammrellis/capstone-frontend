@@ -9,6 +9,7 @@ import PartEdit from "./components/auth/parts/PartEdit";
 import VehicleEdit from "./components/auth/vehicles/VehicleEdit";
 import NewPartForm from "./components/auth/parts/NewPartForm";
 import NewVehicleForm from "./components/auth/vehicles/NewVehicleForm";
+import AuthLogIn from "./components/auth/AuthLogIn"
 
 import { Col, Row, Container } from "react-bootstrap";
 import { connect } from "react-redux";
@@ -78,6 +79,11 @@ class App extends React.Component {
                       path="/vehicleParts/:id"
                       component={VehicleParts}
                     />
+                    <Route
+                      exact
+                      path="/authlogin"
+                      component={AuthLogIn}
+                    />  
                   </Row>
                 </Container>
               </Col>

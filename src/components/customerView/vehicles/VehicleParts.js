@@ -34,7 +34,8 @@ const VehicleParts = props => {
           color: "lightgray",
           backgroundColor: "#233",
           border:"solid gray 1px",
-          boxShadow: "0 8px 16px 0 black"
+          boxShadow: "0 8px 16px 0 black",
+          
         }}
       >
         <Card.Img variant="top" src={part.image} />

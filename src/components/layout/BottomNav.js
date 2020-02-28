@@ -13,10 +13,10 @@ class BottomNav extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-          <Link to={`/authdashboard`}>
+          <Link to={`/authlogin`}>
               <Button
                 style={{ margin: "3px" }}
-                variant="outline-warning"
+                variant="outline-danger"
                 size="sm"
               >
                 Login
