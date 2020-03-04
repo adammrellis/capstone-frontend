@@ -50,7 +50,8 @@ class NewPartForm extends React.Component {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          width: "100%"
+          width: "100%",
+          height: "100vh"
         }}
       >
         <Card

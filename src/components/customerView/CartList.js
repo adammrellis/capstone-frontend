@@ -49,7 +49,7 @@ const CartList = props => {
             opacity: ".9"
           }}
         >
-          <p className="" style={{ textAlign: "center" }}>
+          <p className="" style={{ textAlign: "center", margin: "15px" }}>
             Subtotal: ${cartSubTotal().toFixed(2)}
           </p>
           <p style={{ textAlign: "center" }}>Tax: ${tax.toFixed(2)}</p>
